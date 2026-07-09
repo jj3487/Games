@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dhnud8cis78qv"]
+
+[ext_resource type="PackedScene" uid="uid://wtn8337a2cpb" path="res://Scenes/Dino.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://plv3cdece6sm" path="res://Scenes/Cactus.tscn" id="2_bo1nx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bo1nx"]
+
+[node name="Main" type="Node2D" unique_id=788069368]
+
+[node name="Dino" parent="." unique_id=1868304671 instance=ExtResource("1_jjgbg")]
+position = Vector2(359, 267)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=429433260]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=920789527]
+position = Vector2(352, 535)
+shape = SubResource("WorldBoundaryShape2D_bo1nx")
+
+[node name="Cactus" parent="." unique_id=1523637018 instance=ExtResource("2_bo1nx")]
+position = Vector2(630, 506)
