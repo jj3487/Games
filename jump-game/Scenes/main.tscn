@@ -1,28 +1,15 @@
 [gd_scene format=3 uid="uid://dhnud8cis78qv"]
 
 [ext_resource type="PackedScene" uid="uid://wtn8337a2cpb" path="res://Scenes/Dino.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://c6dnewilpr6am" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://plv3cdece6sm" path="res://Scenes/Cactus.tscn" id="2_bo1nx"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://chwqqn3ptimxg" path="res://Scenes/Ground.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://ux13vl8y0ivq" path="res://Scenes/Score.tscn" id="5_kry3j"]
 
 [node name="Main" type="Node2D" unique_id=788069368]
+script = ExtResource("1_jjvhh")
 
-[node name="Dino" parent="." unique_id=1868304671 instance=ExtResource("1_jjgbg")]
-position = Vector2(318.1145, 499.8108)
-
-[node name="Cactus" parent="." unique_id=1523637018 instance=ExtResource("2_bo1nx")]
-position = Vector2(642.9141, 513.2214)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=429433260]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=920789527]
-position = Vector2(352, 535)
-shape = SubResource("WorldBoundaryShape2D_bo1nx")
-
-[node name="Line2D" type="Line2D" parent="StaticBody2D" unique_id=221236763]
-points = PackedVector2Array(0, 535, 6000, 535)
-width = 5.0
-default_color = Color(0, 0, 0, 1)
+[node name="Ground" parent="." unique_id=1728972205 instance=ExtResource("3_8gbba")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=889993486]
 layer = -2
@@ -30,3 +17,31 @@ layer = -2
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=611331273]
 offset_right = 1170.0
 offset_bottom = 654.0
+
+[node name="Dino" parent="." unique_id=1868304671 instance=ExtResource("1_jjgbg")]
+position = Vector2(175, 499)
+
+[node name="CactusX" parent="." unique_id=1523637018 instance=ExtResource("2_bo1nx")]
+visible = false
+position = Vector2(642.9141, 513.2214)
+
+[node name="Cactus6" parent="." unique_id=1098468690 instance=ExtResource("2_bo1nx")]
+visible = false
+position = Vector2(643.9141, 513.2214)
+
+[node name="Cactus2" parent="." unique_id=331569677 instance=ExtResource("2_bo1nx")]
+visible = false
+position = Vector2(999, 510)
+
+[node name="Cactus4" parent="." unique_id=959890602 instance=ExtResource("2_bo1nx")]
+visible = false
+position = Vector2(1379, 507)
+
+[node name="Cactus5" parent="." unique_id=1782740885 instance=ExtResource("2_bo1nx")]
+visible = false
+position = Vector2(2571.6565, 2051.8855)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=146471482]
+position = Vector2(580, 320)
+
+[node name="Score" parent="." unique_id=1321088390 instance=ExtResource("5_kry3j")]

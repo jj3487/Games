@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://chwqqn3ptimxg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bo1nx"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1728972205]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=807604296]
+position = Vector2(352, 535)
+shape = SubResource("WorldBoundaryShape2D_bo1nx")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=835646047]
+points = PackedVector2Array(0, 535, 2400, 535)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
