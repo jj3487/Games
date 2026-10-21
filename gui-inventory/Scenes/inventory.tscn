@@ -1,6 +1,35 @@
 [gd_scene format=3 uid="uid://b52p3ab6vx48a"]
 
 [ext_resource type="Texture2D" uid="uid://g2iimunhc32a" path="res://Assets/pixel_ui_fantasy/themes/parchment/window.png" id="1_wdn4f"]
+[ext_resource type="Texture2D" uid="uid://3e3hpbcmpjse" path="res://Assets/pixel_ui_fantasy/themes/parchment/panel.png" id="2_c5ffv"]
+[ext_resource type="Texture2D" uid="uid://r8h865m2rv7a" path="res://Assets/pixel_ui_fantasy/themes/parchment/tab_unselected.png" id="3_sd8fj"]
+[ext_resource type="Texture2D" uid="uid://qrx3kc657jsu" path="res://Assets/pixel_ui_fantasy/themes/parchment/tab_hover.png" id="4_trvqw"]
+[ext_resource type="Texture2D" uid="uid://djkwk7c0aigno" path="res://Assets/pixel_ui_fantasy/themes/parchment/tab_selected.png" id="5_aqnmd"]
+[ext_resource type="PackedScene" uid="uid://cc4jyhlx6ih7a" path="res://Scenes/slot.tscn" id="6_o4ksx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luhj6"]
+texture = ExtResource("2_c5ffv")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c828r"]
+content_margin_left = 6.0
+content_margin_right = 6.0
+texture = ExtResource("3_sd8fj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_th82r"]
+content_margin_left = 6.0
+content_margin_right = 6.0
+texture = ExtResource("4_trvqw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_typyk"]
+content_margin_left = 6.0
+content_margin_right = 6.0
+texture = ExtResource("5_aqnmd")
 
 [node name="Inventory" type="Control" unique_id=929356804]
 layout_mode = 3
@@ -11,12 +40,84 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1803346593]
-layout_mode = 0
-offset_right = 178.0
-offset_bottom = 97.0
+layout_mode = 1
+offset_left = -106.0
+offset_top = -61.0
+offset_right = 104.0
+offset_bottom = 63.0
 texture = ExtResource("1_wdn4f")
 patch_margin_left = 6
-patch_margin_top = 6
+patch_margin_top = 19
 patch_margin_right = 6
 patch_margin_bottom = 6
 axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TabContainer" type="TabContainer" parent="NinePatchRect" unique_id=771798642]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 23.0
+offset_right = 200.0
+offset_bottom = 113.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_luhj6")
+theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_c828r")
+theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_th82r")
+theme_override_styles/tab_selected = SubResource("StyleBoxTexture_typyk")
+current_tab = 0
+
+[node name="Items" type="TabBar" parent="NinePatchRect/TabContainer" unique_id=2034860117]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/TabContainer/Items" unique_id=911080343]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 6
+
+[node name="Slot" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=322147170 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=1593528565 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot2" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=52343727 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=705812464 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot5" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=1446603752 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot6" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=2112193541 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot7" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=2066989992 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot8" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=1033556380 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot9" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=843778651 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot10" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=135481979 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot11" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=289959384 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Slot12" parent="NinePatchRect/TabContainer/Items/GridContainer" unique_id=574773749 instance=ExtResource("6_o4ksx")]
+layout_mode = 2
+
+[node name="Crafting" type="TabBar" parent="NinePatchRect/TabContainer" unique_id=1283260429]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1843416344]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 18.0
+text = "Inventory"

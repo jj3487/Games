@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cc4jyhlx6ih7a"]
+
+[ext_resource type="Texture2D" uid="uid://dlfm5muruh4g8" path="res://Assets/pixel_ui_fantasy/themes/parchment/panel_inset.png" id="1_luhj6"]
+
+[node name="Slot" type="Panel" unique_id=322147170]
+custom_minimum_size = Vector2(26, 26)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1126.0
+offset_bottom = -622.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=112448560]
+position = Vector2(13, 13)
+texture = ExtResource("1_luhj6")
