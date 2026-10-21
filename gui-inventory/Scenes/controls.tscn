@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bq77m630bfl5q"]
+
+[ext_resource type="Script" uid="uid://dq7hvlgxoayml" path="res://Scripts/controls.gd" id="1_q6vtx"]
+[ext_resource type="Texture2D" uid="uid://bjbru8gjvqvp4" path="res://Assets/pixel_ui_fantasy/themes/parchment/button_normal.png" id="2_k4nhr"]
+[ext_resource type="Texture2D" uid="uid://d2pyjpiqwh3ex" path="res://Assets/pixel_ui_fantasy/themes/parchment/button_pressed.png" id="3_21kh3"]
+[ext_resource type="Texture2D" uid="uid://cmeia47k1lgj1" path="res://Assets/pixel_ui_fantasy/themes/parchment/button_hover.png" id="4_f0kct"]
+[ext_resource type="Texture2D" uid="uid://bhopye11bibqb" path="res://Assets/pixel_ui_fantasy/themes/parchment/button_disabled.png" id="5_pwth0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y32fe"]
+texture = ExtResource("2_k4nhr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_miyui"]
+texture = ExtResource("3_21kh3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_au1p5"]
+texture = ExtResource("4_f0kct")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0r50y"]
+texture = ExtResource("5_pwth0")
+
+[node name="Controls" type="Node2D" unique_id=960380363 groups=["controls"]]
+script = ExtResource("1_q6vtx")
+
+[node name="ButtonDamage" type="Button" parent="." unique_id=355951460]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 316.0
+offset_top = 323.0
+offset_right = 443.0
+offset_bottom = 379.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_y32fe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_miyui")
+theme_override_styles/hover = SubResource("StyleBoxTexture_au1p5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0r50y")
+text = "Damage"
+
+[node name="ButtonHeal" type="Button" parent="." unique_id=456432342]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 614.0
+offset_top = 323.0
+offset_right = 741.0
+offset_bottom = 379.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_y32fe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_miyui")
+theme_override_styles/hover = SubResource("StyleBoxTexture_au1p5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0r50y")
+text = "Heal"
+
+[node name="Label" type="Label" parent="." unique_id=278974115]
+offset_left = 53.0
+offset_top = 333.0
+offset_right = 186.0
+offset_bottom = 368.1
+theme_override_font_sizes/font_size = 27
+text = "Health: "
+
+[connection signal="pressed" from="ButtonDamage" to="." method="_on_button_damage_pressed"]
+[connection signal="pressed" from="ButtonHeal" to="." method="_on_button_heal_pressed"]

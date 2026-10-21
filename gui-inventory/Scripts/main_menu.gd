@@ -1,5 +1,7 @@
 extends Control
 
+@onready var health = $"../Health"
+@onready var gameController = $"../GameController"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +14,8 @@ func _process(delta: float) -> void:
 	
 	
 func _on_button_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	gameController._show_only(health)
+	#get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 
 

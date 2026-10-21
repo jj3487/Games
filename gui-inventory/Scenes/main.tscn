@@ -1,8 +1,36 @@
 [gd_scene format=3 uid="uid://i7jhrpajjobx"]
 
-[ext_resource type="Script" uid="uid://blrlicxtyqugi" path="res://Scenes/game_controller.gd" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://c822e75n6yj4r" path="res://Assets/pixel_ui_fantasy/themes/parchment/progress_bg.png" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://blrlicxtyqugi" path="res://Scripts/game_controller.gd" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://cg3cmfiexf53j" path="res://Assets/pixel_ui_fantasy/bars/bar_red.png" id="2_jjvhh"]
+[ext_resource type="Script" uid="uid://dxwiawsy87d6a" path="res://Scripts/health.gd" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://bskvju1wecc6y" path="res://Scenes/main_menu.tscn" id="5_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bq77m630bfl5q" path="res://Scenes/controls.tscn" id="5_kry3j"]
 
-[node name="main" type="Node2D" unique_id=138410695]
+[node name="main_non_diegetic" type="Node2D" unique_id=138410695]
 
-[node name="GameController" type="Node" parent="." unique_id=1482231400]
+[node name="Health" type="TextureProgressBar" parent="." unique_id=124841242]
+offset_left = 22.0
+offset_top = 18.0
+offset_right = 137.0
+offset_bottom = 29.0
+scale = Vector2(2, 2)
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 2
+stretch_margin_right = 4
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_8gbba")
+texture_progress = ExtResource("2_jjvhh")
+script = ExtResource("3_jjvhh")
+
+[node name="Controls" parent="." unique_id=960380363 instance=ExtResource("5_kry3j")]
+
+[node name="MainMenu" parent="." unique_id=858586946 instance=ExtResource("5_21xkr")]
+offset_left = 576.0
+offset_top = 333.0
+offset_right = 576.0
+offset_bottom = 333.0
+
+[node name="GameController" type="Node" parent="." unique_id=1827171409]
 script = ExtResource("1_jjgbg")
