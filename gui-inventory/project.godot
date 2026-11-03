@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://bmcfrihbogo23"
 
 [global_group]
 

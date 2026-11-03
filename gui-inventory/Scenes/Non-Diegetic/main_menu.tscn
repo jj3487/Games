@@ -7,17 +7,33 @@
 [ext_resource type="Texture2D" uid="uid://cmeia47k1lgj1" path="res://Assets/pixel_ui_fantasy/themes/parchment/button_hover.png" id="5_8s6v3"]
 [ext_resource type="Texture2D" uid="uid://bhopye11bibqb" path="res://Assets/pixel_ui_fantasy/themes/parchment/button_disabled.png" id="6_jwfcp"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smhyf"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y32fe"]
 texture = ExtResource("3_468re")
+texture_margin_left = 2.0
+texture_margin_top = 3.0
+texture_margin_right = 2.0
+texture_margin_bottom = 3.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvnu6"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_miyui"]
 texture = ExtResource("4_aws4t")
+texture_margin_left = 2.0
+texture_margin_top = 3.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0in4i"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_au1p5"]
 texture = ExtResource("5_8s6v3")
+texture_margin_left = 2.0
+texture_margin_top = 3.0
+texture_margin_right = 2.0
+texture_margin_bottom = 3.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4recf"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0r50y"]
 texture = ExtResource("6_jwfcp")
+texture_margin_left = 2.0
+texture_margin_top = 3.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
 
 [node name="MainMenu" type="Control" unique_id=858586946]
 layout_mode = 3
@@ -26,71 +42,60 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = 45.0
+offset_right = 27.0
+offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_s5qsn")
 script = ExtResource("2_hvieo")
 
-[node name="ButtonPlay" type="Button" parent="." unique_id=324532862]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = -106.0
-offset_right = 64.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxTexture_smhyf")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_xvnu6")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0in4i")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_4recf")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=664036006]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=784032451]
+anchors_preset = -1
+anchor_left = 0.060000002
+anchor_top = 0.143
+anchor_right = 0.060000002
+anchor_bottom = 0.143
+offset_left = 193.38
+offset_top = 41.336
+offset_right = 248.38
+offset_bottom = 106.336
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 15
+
+[node name="ButtonPlay" type="Button" parent="CanvasLayer/GridContainer" unique_id=324532862]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_y32fe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_miyui")
+theme_override_styles/hover = SubResource("StyleBoxTexture_au1p5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0r50y")
 text = "Play
 "
 
-[node name="ButtonSettings" type="Button" parent="." unique_id=257200293]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.5
-offset_top = -28.0
-offset_right = 63.5
-offset_bottom = 28.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxTexture_smhyf")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_xvnu6")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0in4i")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_4recf")
+[node name="ButtonSettings" type="Button" parent="CanvasLayer/GridContainer" unique_id=257200293]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_y32fe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_miyui")
+theme_override_styles/hover = SubResource("StyleBoxTexture_au1p5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0r50y")
 text = "Settings
 "
 
-[node name="ButtonQuit" type="Button" parent="." unique_id=1178630629]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -63.0
-offset_top = 54.0
-offset_right = 64.0
-offset_bottom = 110.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxTexture_smhyf")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_xvnu6")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0in4i")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_4recf")
+[node name="ButtonQuit" type="Button" parent="CanvasLayer/GridContainer" unique_id=1178630629]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_y32fe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_miyui")
+theme_override_styles/hover = SubResource("StyleBoxTexture_au1p5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0r50y")
 text = "Quit"
 
-[connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]
-[connection signal="pressed" from="ButtonSettings" to="." method="_on_button_settings_pressed"]
-[connection signal="pressed" from="ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
