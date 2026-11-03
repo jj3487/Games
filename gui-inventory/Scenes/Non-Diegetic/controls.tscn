@@ -142,6 +142,10 @@ offset_top = 125.5
 offset_right = 213.0
 offset_bottom = 146.5
 theme_override_styles/normal = SubResource("StyleBoxTexture_nqupj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nqupj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nqupj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_nqupj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_nqupj")
 theme_override_icons/arrow = ExtResource("7_0yc5c")
 selected = 0
 item_count = 2
@@ -160,5 +164,7 @@ max_value = 20.0
 
 [connection signal="pressed" from="ButtonDamage" to="." method="_on_button_damage_pressed"]
 [connection signal="pressed" from="ButtonHeal" to="." method="_on_button_heal_pressed"]
-[connection signal="pressed" from="ButtonAdd" to="." method="_on_button_heal_pressed"]
-[connection signal="pressed" from="ButtonDelete" to="." method="_on_button_heal_pressed"]
+[connection signal="pressed" from="ButtonAdd" to="." method="_on_button_add_pressed"]
+[connection signal="pressed" from="ButtonDelete" to="." method="_on_button_delete_pressed"]
+[connection signal="item_selected" from="CanvasLayer/OptionButton" to="." method="_on_item_selected"]
+[connection signal="value_changed" from="CanvasLayer/SpinBox" to="." method="_on_item_count_changed"]
