@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://r8h865m2rv7a" path="res://Assets/pixel_ui_fantasy/themes/parchment/tab_unselected.png" id="3_sd8fj"]
 [ext_resource type="Texture2D" uid="uid://qrx3kc657jsu" path="res://Assets/pixel_ui_fantasy/themes/parchment/tab_hover.png" id="4_trvqw"]
 [ext_resource type="Texture2D" uid="uid://djkwk7c0aigno" path="res://Assets/pixel_ui_fantasy/themes/parchment/tab_selected.png" id="5_aqnmd"]
-[ext_resource type="PackedScene" uid="uid://cc4jyhlx6ih7a" path="res://Scenes/slot.tscn" id="6_o4ksx"]
+[ext_resource type="PackedScene" uid="uid://cc4jyhlx6ih7a" path="res://Scenes/Non-Diegetic/slot.tscn" id="6_o4ksx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luhj6"]
 texture = ExtResource("2_c5ffv")

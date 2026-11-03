@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bujj7sorl6rqi"]
+
+[ext_resource type="Texture2D" uid="uid://c822e75n6yj4r" path="res://Assets/pixel_ui_fantasy/themes/parchment/progress_bg.png" id="1_e2irk"]
+[ext_resource type="Texture2D" uid="uid://cg3cmfiexf53j" path="res://Assets/pixel_ui_fantasy/bars/bar_red.png" id="2_yblbe"]
+[ext_resource type="Script" uid="uid://dxwiawsy87d6a" path="res://Scripts/Non-Diegetic/health.gd" id="3_60pua"]
+[ext_resource type="PackedScene" uid="uid://bq77m630bfl5q" path="res://Scenes/Non-Diegetic/controls.tscn" id="4_x4bmv"]
+[ext_resource type="PackedScene" uid="uid://bskvju1wecc6y" path="res://Scenes/Non-Diegetic/main_menu.tscn" id="5_5oapr"]
+[ext_resource type="Script" uid="uid://blrlicxtyqugi" path="res://Scripts/Non-Diegetic/game_controller.gd" id="6_d7hgo"]
+[ext_resource type="PackedScene" uid="uid://b52p3ab6vx48a" path="res://Scenes/Non-Diegetic/inventory.tscn" id="7_jpdub"]
+[ext_resource type="Script" uid="uid://u4p8pd427qmk" path="res://Scripts/Non-Diegetic/inventory_controller.gd" id="8_hj36m"]
+[ext_resource type="Resource" uid="uid://cd2snwg1t3ci8" path="res://Inventory/player_inventory.tres" id="9_cukeu"]
+
+[node name="main_non_diegetic" type="Node2D" unique_id=138410695]
+
+[node name="Health" type="TextureProgressBar" parent="." unique_id=124841242]
+offset_left = 22.0
+offset_top = 18.0
+offset_right = 137.0
+offset_bottom = 29.0
+scale = Vector2(2, 2)
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 2
+stretch_margin_right = 4
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_e2irk")
+texture_progress = ExtResource("2_yblbe")
+script = ExtResource("3_60pua")
+
+[node name="Controls" parent="." unique_id=960380363 instance=ExtResource("4_x4bmv")]
+
+[node name="MainMenu" parent="." unique_id=858586946 instance=ExtResource("5_5oapr")]
+offset_left = 576.0
+offset_top = 333.0
+offset_right = 576.0
+offset_bottom = 333.0
+
+[node name="GameController" type="Node" parent="." unique_id=1827171409]
+script = ExtResource("6_d7hgo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=914540568]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="Inventory" parent="CanvasLayer" unique_id=929356804 instance=ExtResource("7_jpdub")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -162.5
+offset_right = -288.0
+offset_bottom = -162.5
+
+[node name="InventoryController" type="Node" parent="." unique_id=1449634995]
+script = ExtResource("8_hj36m")
+inventory = ExtResource("9_cukeu")

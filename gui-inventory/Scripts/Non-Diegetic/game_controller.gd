@@ -6,6 +6,7 @@ extends Node
 @onready var mainMenu: Control = $"../MainMenu"
 @onready var inventory: Control = $"../CanvasLayer/Inventory"
 @onready var health = $"../Health"
+@onready var controls_layer: CanvasLayer = $"../Controls/CanvasLayer"
 #const CONTROLS_SCENE := "res://Scenes/controls.tscn"
 #var previous_scene := ""
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 func toggle_menu() -> void:
 	var show_it := not mainMenu.visible
 	controls.hide()
+	controls.get_node("Canvas_Layer").hide()
 	health.hide()
 	inventory.hide()
 	mainMenu.visible = show_it
@@ -26,6 +28,7 @@ func toggle_menu() -> void:
 func toggle_inventory() -> void:
 	var show_it := not inventory.visible
 	controls.hide()
+	controls.get_node("Canvas_Layer").hide()
 	health.hide()
 	mainMenu.hide()
 	inventory.visible = show_it
@@ -35,11 +38,13 @@ func toggle_controls() -> void:
 	health.hide()
 	mainMenu.hide()
 	inventory.hide()
+	controls.get_node("Canvas_Layer").show()
 	controls.visible = show_it
 
 func _show_only(target: CanvasItem) -> void:
 	for n in [health, mainMenu, controls, inventory]:
 		n.visible = (n == target)
+	controls_layer.visible = (target == controls)
 
 func _toggle(target: CanvasItem) -> void:
 	if target.visible:
