@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GUI_Inventory"
-run/main_scene="uid://i7jhrpajjobx"
+run/main_scene="uid://c0e2wol6cw0uw"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

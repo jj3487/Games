@@ -1,17 +1,29 @@
 [gd_scene format=3 uid="uid://boouhq73r41g4"]
 
 [ext_resource type="Theme" uid="uid://ddek5lj31yntq" path="res://Assets/pixel_ui_fantasy/themes/parchment.tres" id="1_ysof3"]
-[ext_resource type="Script" uid="uid://bhx10oboe4xk6" path="res://Scripts/Non-Diegetic/main_menu.gd" id="2_o7ro8"]
+[ext_resource type="Script" uid="uid://ch6k70hbgqlvv" path="res://Scripts/Diegetic/main_menu.gd" id="2_vrxam"]
 [ext_resource type="FontFile" uid="uid://b2stwbiqd260i" path="res://Assets/Cantarell/Cantarell-Regular.ttf" id="3_vrxam"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrxam"]
-bg_color = Color(0.794828, 0.79482806, 0.7948278, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03jed"]
+bg_color = Color(0.27058825, 0.27058825, 0.27058825, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhlcp"]
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7srno"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7eci"]
-bg_color = Color(0.7135178, 0.71351784, 0.71351767, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vfwg"]
+bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="MainMenu" type="Control" unique_id=858586946]
 layout_mode = 3
@@ -23,7 +35,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ysof3")
-script = ExtResource("2_o7ro8")
+script = ExtResource("2_vrxam")
 
 [node name="ButtonPlay" type="Button" parent="." unique_id=324532862]
 layout_mode = 1
@@ -38,17 +50,16 @@ offset_right = 64.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_focus_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_pressed_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_hover_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_hover_pressed_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_disabled_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_vrxam")
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("StyleBoxFlat_vrxam")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bhlcp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_q7eci")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_03jed")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7srno")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4vfwg")
 text = "Play
 "
 
@@ -65,17 +76,16 @@ offset_right = 63.5
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_focus_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_pressed_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_hover_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_hover_pressed_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_disabled_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_vrxam")
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("StyleBoxFlat_vrxam")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bhlcp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_q7eci")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_03jed")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7srno")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4vfwg")
 text = "Settings
 "
 
@@ -90,17 +100,16 @@ offset_right = 64.0
 offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_focus_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_pressed_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_hover_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_hover_pressed_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
-theme_override_colors/font_disabled_color = Color(0.3372549, 0.34117648, 0.3372549, 0.9882353)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_vrxam")
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("StyleBoxFlat_vrxam")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bhlcp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_q7eci")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_03jed")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7srno")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4vfwg")
 text = "Quit"
 
 [connection signal="pressed" from="ButtonPlay" to="." method="_on_button_play_pressed"]

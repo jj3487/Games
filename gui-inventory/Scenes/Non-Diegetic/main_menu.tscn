@@ -55,22 +55,18 @@ script = ExtResource("2_hvieo")
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=784032451]
-anchors_preset = -1
-anchor_left = 0.060000002
-anchor_top = 0.143
-anchor_right = 0.060000002
-anchor_bottom = 0.143
-offset_left = 193.38
-offset_top = 41.336
-offset_right = 248.38
-offset_bottom = 106.336
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=863127835]
+offset_right = 576.0
+offset_bottom = 324.0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/CenterContainer" unique_id=784032451]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 15
 
-[node name="ButtonPlay" type="Button" parent="CanvasLayer/GridContainer" unique_id=324532862]
+[node name="ButtonPlay" type="Button" parent="CanvasLayer/CenterContainer/GridContainer" unique_id=324532862]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_y32fe")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_miyui")
@@ -79,7 +75,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_0r50y")
 text = "Play
 "
 
-[node name="ButtonSettings" type="Button" parent="CanvasLayer/GridContainer" unique_id=257200293]
+[node name="ButtonSettings" type="Button" parent="CanvasLayer/CenterContainer/GridContainer" unique_id=257200293]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_y32fe")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_miyui")
@@ -88,7 +84,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_0r50y")
 text = "Settings
 "
 
-[node name="ButtonQuit" type="Button" parent="CanvasLayer/GridContainer" unique_id=1178630629]
+[node name="ButtonQuit" type="Button" parent="CanvasLayer/CenterContainer/GridContainer" unique_id=1178630629]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_y32fe")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_miyui")
@@ -96,6 +92,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_au1p5")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_0r50y")
 text = "Quit"
 
-[connection signal="pressed" from="CanvasLayer/GridContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/GridContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/GridContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/GridContainer/ButtonQuit" to="." method="_on_button_quit_pressed"]

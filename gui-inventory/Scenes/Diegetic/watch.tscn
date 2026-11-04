@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://de1st27tigfms"]
+
+[ext_resource type="Texture2D" uid="uid://kke0rlwopb0a" path="res://Assets/Square Smartwatch/square smartwatch PNG.png" id="1_xy3yi"]
+
+[node name="Watch" type="Node2D" unique_id=1976980999]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1994469832]
+position = Vector2(65, 552)
+scale = Vector2(0.1005, 0.1005)
+texture = ExtResource("1_xy3yi")

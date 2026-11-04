@@ -8,6 +8,7 @@ var selected_item: InventoryItem
 var amount: int
 
 const WHEAT: InventoryItem = preload("res://Inventory/Items/wheat.tres")
+const BREAD: InventoryItem = preload("res://Inventory/Items/bread.tres")
 
 
 
@@ -33,7 +34,8 @@ func _on_item_selected(index: int) -> void:
 	match index:
 		0:
 			selected_item = WHEAT
-			
+		1:
+			selected_item = BREAD
 			
 			
 

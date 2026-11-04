@@ -1,58 +1,57 @@
 [gd_scene format=3 uid="uid://bujj7sorl6rqi"]
 
-[ext_resource type="Texture2D" uid="uid://c822e75n6yj4r" path="res://Assets/pixel_ui_fantasy/themes/parchment/progress_bg.png" id="1_e2irk"]
-[ext_resource type="Texture2D" uid="uid://cg3cmfiexf53j" path="res://Assets/pixel_ui_fantasy/bars/bar_red.png" id="2_yblbe"]
-[ext_resource type="Script" uid="uid://dxwiawsy87d6a" path="res://Scripts/Non-Diegetic/health.gd" id="3_60pua"]
-[ext_resource type="PackedScene" uid="uid://bq77m630bfl5q" path="res://Scenes/Non-Diegetic/controls.tscn" id="4_x4bmv"]
-[ext_resource type="PackedScene" uid="uid://bskvju1wecc6y" path="res://Scenes/Non-Diegetic/main_menu.tscn" id="5_5oapr"]
-[ext_resource type="Script" uid="uid://blrlicxtyqugi" path="res://Scripts/Non-Diegetic/game_controller.gd" id="6_d7hgo"]
-[ext_resource type="PackedScene" uid="uid://b52p3ab6vx48a" path="res://Scenes/Non-Diegetic/inventory.tscn" id="7_jpdub"]
-[ext_resource type="Script" uid="uid://u4p8pd427qmk" path="res://Scripts/Non-Diegetic/inventory_controller.gd" id="8_hj36m"]
-[ext_resource type="Resource" uid="uid://cd2snwg1t3ci8" path="res://Inventory/player_inventory.tres" id="9_cukeu"]
+[ext_resource type="PackedScene" uid="uid://de1st27tigfms" path="res://Scenes/Diegetic/watch.tscn" id="1_4shom"]
+[ext_resource type="FontFile" uid="uid://b2stwbiqd260i" path="res://Assets/Cantarell/Cantarell-Regular.ttf" id="2_e2irk"]
+[ext_resource type="PackedScene" uid="uid://boouhq73r41g4" path="res://Scenes/Diegetic/main_menu.tscn" id="4_e2irk"]
+[ext_resource type="PackedScene" uid="uid://bipdi5eyb5f03" path="res://Scenes/Diegetic/controls.tscn" id="4_jse4n"]
+[ext_resource type="Script" uid="uid://e68sns2cnw5c" path="res://Scripts/Diegetic/game_controller.gd" id="5_jse4n"]
 
-[node name="main_non_diegetic" type="Node2D" unique_id=138410695]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03jed"]
+bg_color = Color(0.27058825, 0.27058825, 0.27058825, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[node name="Health" type="TextureProgressBar" parent="." unique_id=124841242]
-offset_left = 22.0
-offset_top = 18.0
-offset_right = 137.0
-offset_bottom = 29.0
-scale = Vector2(2, 2)
-nine_patch_stretch = true
-stretch_margin_left = 4
-stretch_margin_top = 2
-stretch_margin_right = 4
-stretch_margin_bottom = 2
-texture_under = ExtResource("1_e2irk")
-texture_progress = ExtResource("2_yblbe")
-script = ExtResource("3_60pua")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0in4i"]
+bg_color = Color(0.8980392, 0.22352941, 0.20784314, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[node name="Controls" parent="." unique_id=960380363 instance=ExtResource("4_x4bmv")]
+[node name="main_diegetic" type="Node2D" unique_id=138410695]
 
-[node name="MainMenu" parent="." unique_id=858586946 instance=ExtResource("5_5oapr")]
-offset_left = 576.0
-offset_top = 333.0
-offset_right = 576.0
-offset_bottom = 333.0
+[node name="Watch" parent="." unique_id=1976980999 instance=ExtResource("1_4shom")]
+
+[node name="GridContainer" type="GridContainer" parent="Watch" unique_id=729555789]
+offset_left = 24.0
+offset_top = 506.0
+offset_right = 109.0
+offset_bottom = 599.0
+
+[node name="Health" type="ProgressBar" parent="Watch" unique_id=1584041954]
+offset_left = 30.0
+offset_top = 506.0
+offset_right = 99.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_e2irk")
+theme_override_styles/background = SubResource("StyleBoxFlat_03jed")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0in4i")
+value = 100.0
+rounded = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=279545902]
+offset_right = 1152.0
+offset_bottom = 653.0
+
+[node name="MainMenu" parent="CenterContainer" unique_id=858586946 instance=ExtResource("4_e2irk")]
+layout_mode = 2
+
+[node name="Controls" parent="." unique_id=960380363 instance=ExtResource("4_jse4n")]
+script = null
 
 [node name="GameController" type="Node" parent="." unique_id=1827171409]
-script = ExtResource("6_d7hgo")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=914540568]
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
-
-[node name="Inventory" parent="CanvasLayer" unique_id=929356804 instance=ExtResource("7_jpdub")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -288.0
-offset_top = -162.5
-offset_right = -288.0
-offset_bottom = -162.5
-
-[node name="InventoryController" type="Node" parent="." unique_id=1449634995]
-script = ExtResource("8_hj36m")
-inventory = ExtResource("9_cukeu")
+script = ExtResource("5_jse4n")
