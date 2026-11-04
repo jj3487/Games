@@ -2,6 +2,35 @@
 
 [ext_resource type="Script" uid="uid://ddxjyyjarqtyd" path="res://Scripts/Non-Diegetic/slot.gd" id="1_ax417"]
 [ext_resource type="Texture2D" uid="uid://dlfm5muruh4g8" path="res://Assets/pixel_ui_fantasy/themes/parchment/panel_inset.png" id="2_fgsq7"]
+[ext_resource type="Texture2D" uid="uid://h00lss5dmr5x" path="res://Assets/pixel_ui_fantasy/themes/parchment/slot_common.png" id="3_arhso"]
+[ext_resource type="Texture2D" uid="uid://d30m1mwt8kjco" path="res://Assets/pixel_ui_fantasy/themes/parchment/focus.png" id="4_yh5if"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0in4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fgsq7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_arhso")
+}],
+"loop": 1,
+"name": &"filled",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yh5if")
+}],
+"loop": 1,
+"name": &"selected",
+"speed": 5.0
+}]
 
 [node name="Slot" type="Panel" unique_id=322147170]
 custom_minimum_size = Vector2(26, 26)
@@ -14,9 +43,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ax417")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=112448560]
+[node name="Background" type="AnimatedSprite2D" parent="." unique_id=236184021]
 position = Vector2(13, 13)
-texture = ExtResource("2_fgsq7")
+sprite_frames = SubResource("SpriteFrames_0in4i")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1848824634]
 custom_minimum_size = Vector2(26, 26)
@@ -28,3 +57,11 @@ offset_bottom = 26.0
 layout_mode = 2
 
 [node name="Item" type="Sprite2D" parent="CenterContainer/Panel" unique_id=135833176]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel" unique_id=1032408052]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 13.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 8
+text = "99"

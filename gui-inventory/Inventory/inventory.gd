@@ -2,27 +2,47 @@ extends Resource
 class_name Inventory
 
 const MAX_SLOTS: int = 12
-@export var free_slot_count: int = 12
+const MAX_STACK: int = 20
 @export var items: Array[InventoryItem]
-#@export var amounts: Array[int]
+@export var amounts: Array[int]
 signal updated
 
 func add_item(item: InventoryItem, amount: int) -> void:
-	# your add logic here
-	if free_slot_count < amount:
-		amount = free_slot_count
+	if item == null or amount <= 0:
+		return
+	amount = check_stack(item, amount)
 	for i in items.size():
-		for j in amount:
-			if items[i] == null:
-				items[i] = item
+		if amount == 0:
+			break
+		if items[i] == null:
+			var moved := mini(MAX_STACK, amount)
+			items[i] = item
+			amounts[i] = moved
+			amount -= moved
 	updated.emit()
 
+func check_stack(item: InventoryItem, amount: int) -> int:
+	for i in items.size():
+		if amount == 0:
+			break
+		if items[i] == item and amounts[i] < MAX_STACK:
+			var moved := mini(MAX_STACK - amounts[i], amount)
+			amounts[i] += moved
+			amount -= moved
+	return amount
+
+
 func delete_item(item: InventoryItem, amount: int) -> void:
-	# your delete logic here
-	if MAX_SLOTS < amount:
-		amount = MAX_SLOTS
-	for i in amount:
+	if item == null or amount <= 0:
+		return
+	var left := amount
+	for i in range(MAX_SLOTS - 1, -1, -1):
+		if left == 0:
+			break
 		if items[i] == item:
-			items[i] = null
-	
+			var taken := mini(amounts[i], left)
+			amounts[i] -= taken
+			left -= taken
+			if amounts[i] == 0:
+				items[i] = null
 	updated.emit()

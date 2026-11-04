@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bl2oogjnni35p" path="res://Assets/pixel_ui_fantasy/themes/parchment/radio_off.png" id="7_wbttg"]
 [ext_resource type="Texture2D" uid="uid://dfq17n5q835hr" path="res://Assets/pixel_ui_fantasy/arrow.png" id="7_xlx7q"]
 [ext_resource type="Texture2D" uid="uid://cj1ory8isekf6" path="res://Assets/pixel_ui_fantasy/icons/cross.png" id="8_51j2k"]
-[ext_resource type="Texture2D" uid="uid://3e3hpbcmpjse" path="res://Assets/pixel_ui_fantasy/themes/parchment/panel.png" id="8_wbttg"]
+[ext_resource type="Texture2D" uid="uid://dlfm5muruh4g8" path="res://Assets/pixel_ui_fantasy/themes/parchment/panel_inset.png" id="8_wbttg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y32fe"]
 texture = ExtResource("2_k4nhr")
@@ -42,10 +42,10 @@ texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_niq0o"]
 texture = ExtResource("8_wbttg")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
