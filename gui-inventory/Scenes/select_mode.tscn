@@ -69,24 +69,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k2owe")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1208955856]
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
-
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=696764173]
-offset_right = 576.0
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=696764173]
+layout_mode = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 575.0
 offset_bottom = 324.0
 
-[node name="Control" type="Control" parent="CanvasLayer/CenterContainer" unique_id=1268114697]
+[node name="GridContainer" type="GridContainer" parent="CenterContainer" unique_id=1043957048]
 layout_mode = 2
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 50
 
-[node name="NonDiegetic" type="Button" parent="CanvasLayer/CenterContainer/Control" unique_id=432089514]
-layout_mode = 0
-offset_left = -41.0
-offset_top = -34.0
-offset_right = 42.0
-offset_bottom = -15.0
-theme_override_font_sizes/font_size = 10
+[node name="NonDiegetic" type="Button" parent="CenterContainer/GridContainer" unique_id=432089514]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxTexture_y32fe")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_miyui")
 theme_override_styles/hover = SubResource("StyleBoxTexture_au1p5")
@@ -94,12 +91,8 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_0r50y")
 text = "Non-Diegetic
 "
 
-[node name="Diegetic" type="Button" parent="CanvasLayer/CenterContainer/Control" unique_id=795384556]
-layout_mode = 0
-offset_left = -31.0
-offset_top = 14.0
-offset_right = 31.0
-offset_bottom = 38.0
+[node name="Diegetic" type="Button" parent="CenterContainer/GridContainer" unique_id=795384556]
+layout_mode = 2
 theme = SubResource("Theme_4recf")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -107,12 +100,16 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_bwjyn")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_03jed")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7srno")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4vfwg")
 text = "Diegetic
 "
 
-[connection signal="pressed" from="CanvasLayer/CenterContainer/Control/NonDiegetic" to="." method="_on_non_diegetic_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/Control/Diegetic" to="." method="_on_diegetic_pressed"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1208955856]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[connection signal="pressed" from="CenterContainer/GridContainer/NonDiegetic" to="." method="_on_non_diegetic_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Diegetic" to="." method="_on_diegetic_pressed"]
