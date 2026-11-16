@@ -3,7 +3,6 @@ extends Node
 @onready var controls: Node2D = $"../Controls"
 @onready var mainMenu: Control = $"../CenterContainer/MainMenu"
 @onready var watch = $"../Watch"
-@onready var controls_layer: CanvasLayer = $"../Controls/CanvasLayer"
 @onready var mainMenu_layer: CanvasLayer = $"../MainMenu/CanvasLayer"
 #const CONTROLS_SCENE := "res://Scenes/controls.tscn"
 #var previous_scene := ""
@@ -18,7 +17,6 @@ func _ready() -> void:
 func _show_only(target: CanvasItem) -> void:
 	for n in [mainMenu, controls, watch]:
 		n.visible = (n == target)
-	controls_layer.visible = (target == controls)
 
 func _toggle(target: CanvasItem) -> void:
 	if target.visible:

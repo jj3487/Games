@@ -2,9 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://de1st27tigfms" path="res://Scenes/Diegetic/watch.tscn" id="1_4shom"]
 [ext_resource type="FontFile" uid="uid://b2stwbiqd260i" path="res://Assets/Cantarell/Cantarell-Regular.ttf" id="2_e2irk"]
+[ext_resource type="Script" uid="uid://cp7mgh216neh1" path="res://Scripts/Diegetic/health.gd" id="3_55hlq"]
+[ext_resource type="Script" uid="uid://dku6w844mre2v" path="res://Scripts/Diegetic/time_gui.gd" id="4_4shom"]
 [ext_resource type="PackedScene" uid="uid://boouhq73r41g4" path="res://Scenes/Diegetic/main_menu.tscn" id="4_e2irk"]
 [ext_resource type="PackedScene" uid="uid://bipdi5eyb5f03" path="res://Scenes/Diegetic/controls.tscn" id="4_jse4n"]
 [ext_resource type="Script" uid="uid://e68sns2cnw5c" path="res://Scripts/Diegetic/game_controller.gd" id="5_jse4n"]
+[ext_resource type="Script" uid="uid://bve3mosoq4yhk" path="res://Scripts/time_system.gd" id="8_e2irk"]
+[ext_resource type="Script" uid="uid://dtv2h2v7sxbne" path="res://Scripts/date_time.gd" id="9_e2irk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03jed"]
 bg_color = Color(0.27058825, 0.27058825, 0.27058825, 1)
@@ -20,6 +24,10 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
+[sub_resource type="Resource" id="Resource_yblbe"]
+script = ExtResource("9_e2irk")
+metadata/_custom_type_script = "uid://dtv2h2v7sxbne"
+
 [node name="main_diegetic" type="Node2D" unique_id=138410695]
 
 [node name="Watch" parent="." unique_id=1976980999 instance=ExtResource("1_4shom")]
@@ -32,9 +40,9 @@ offset_bottom = 599.0
 
 [node name="Health" type="ProgressBar" parent="Watch" unique_id=1584041954]
 offset_left = 30.0
-offset_top = 506.0
+offset_top = 543.0
 offset_right = 99.0
-offset_bottom = 525.0
+offset_bottom = 562.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_e2irk")
@@ -42,6 +50,18 @@ theme_override_styles/background = SubResource("StyleBoxFlat_03jed")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0in4i")
 value = 100.0
 rounded = true
+script = ExtResource("3_55hlq")
+
+[node name="Label" type="Label" parent="Watch" unique_id=1259390889]
+offset_left = 27.0
+offset_top = 517.0
+offset_right = 102.0
+offset_bottom = 542.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_e2irk")
+theme_override_font_sizes/font_size = 17
+text = "00:00:00"
+script = ExtResource("4_4shom")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=279545902]
 offset_right = 1152.0
@@ -51,7 +71,12 @@ offset_bottom = 653.0
 layout_mode = 2
 
 [node name="Controls" parent="." unique_id=960380363 instance=ExtResource("4_jse4n")]
-script = null
 
 [node name="GameController" type="Node" parent="." unique_id=1827171409]
 script = ExtResource("5_jse4n")
+
+[node name="TimeSystem" type="Node" parent="." unique_id=267645503]
+script = ExtResource("8_e2irk")
+dateTime = SubResource("Resource_yblbe")
+ticks_per_second = 60
+metadata/_custom_type_script = "uid://bve3mosoq4yhk"

@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dxc8y22mcu0hl"]
+[gd_scene format=3 uid="uid://c7dukcio445qs"]
 
-[ext_resource type="Script" uid="uid://dku6w844mre2v" path="res://Scripts/Non-Diegetic/time_gui.gd" id="1_lo613"]
+[ext_resource type="Script" uid="uid://bsym6agjxfeav" path="res://Scripts/Non-Diegetic/time_gui.gd" id="1_lo613"]
 [ext_resource type="Texture2D" uid="uid://3e3hpbcmpjse" path="res://Assets/pixel_ui_fantasy/themes/parchment/panel.png" id="1_qtj0a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_luhj6"]

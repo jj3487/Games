@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bipdi5eyb5f03"]
 
-[ext_resource type="Script" uid="uid://dq7hvlgxoayml" path="res://Scripts/Non-Diegetic/controls.gd" id="1_nw8ps"]
+[ext_resource type="Script" uid="uid://blmmi7doonus3" path="res://Scripts/Diegetic/controls.gd" id="1_puu61"]
 [ext_resource type="FontFile" uid="uid://b2stwbiqd260i" path="res://Assets/Cantarell/Cantarell-Regular.ttf" id="2_puu61"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03jed"]
@@ -24,8 +24,8 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[node name="Controls" type="Node2D" unique_id=960380363 groups=["controls"]]
-script = ExtResource("1_nw8ps")
+[node name="Controls" type="Node2D" unique_id=960380363 groups=["controls_d"]]
+script = ExtResource("1_puu61")
 
 [node name="LabelHealth" type="LineEdit" parent="." unique_id=150548517]
 offset_left = 53.0
@@ -86,5 +86,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7srno")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4vfwg")
 text = "Damage"
 
-[connection signal="pressed" from="GridContainer/ButtonHeal" to="." method="_on_button_heal_pressed"]
-[connection signal="pressed" from="GridContainer/ButtonDamage" to="." method="_on_button_damage_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonHeal" to="." method="_on_button_heal_pressed_d"]
+[connection signal="pressed" from="GridContainer/ButtonDamage" to="." method="_on_button_damage_pressed_d"]

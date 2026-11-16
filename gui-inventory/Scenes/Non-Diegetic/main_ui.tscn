@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://moqv3urxkohp"]
 
 [ext_resource type="Texture2D" uid="uid://c822e75n6yj4r" path="res://Assets/pixel_ui_fantasy/themes/parchment/progress_bg.png" id="1_n5jiu"]
-[ext_resource type="PackedScene" uid="uid://dxc8y22mcu0hl" path="res://Scenes/Non-Diegetic/time_gui.tscn" id="1_qerpd"]
+[ext_resource type="PackedScene" uid="uid://c7dukcio445qs" path="res://Scenes/Non-Diegetic/time_gui.tscn" id="1_qerpd"]
 [ext_resource type="Texture2D" uid="uid://cg3cmfiexf53j" path="res://Assets/pixel_ui_fantasy/bars/bar_red.png" id="2_qerpd"]
+[ext_resource type="Script" uid="uid://bsym6agjxfeav" path="res://Scripts/Non-Diegetic/time_gui.gd" id="2_uwah8"]
 [ext_resource type="Script" uid="uid://dxwiawsy87d6a" path="res://Scripts/Non-Diegetic/health.gd" id="3_uwah8"]
 
 [node name="MainUi" type="Control" unique_id=2120769900]
@@ -13,6 +14,7 @@ offset_bottom = 40.0
 
 [node name="TimeGui" parent="." unique_id=2029072524 instance=ExtResource("1_qerpd")]
 layout_mode = 1
+script = ExtResource("2_uwah8")
 
 [node name="Health" type="TextureProgressBar" parent="." unique_id=515113747]
 layout_mode = 0

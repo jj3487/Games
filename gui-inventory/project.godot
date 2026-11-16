@@ -24,6 +24,7 @@ mouse_cursor/custom_image="uid://bmcfrihbogo23"
 [global_group]
 
 controls=""
+controls_d=""
 
 [gui]
 
