@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://moqv3urxkohp"]
+
+[ext_resource type="Texture2D" uid="uid://c822e75n6yj4r" path="res://Assets/pixel_ui_fantasy/themes/parchment/progress_bg.png" id="1_n5jiu"]
+[ext_resource type="PackedScene" uid="uid://dxc8y22mcu0hl" path="res://Scenes/Non-Diegetic/time_gui.tscn" id="1_qerpd"]
+[ext_resource type="Texture2D" uid="uid://cg3cmfiexf53j" path="res://Assets/pixel_ui_fantasy/bars/bar_red.png" id="2_qerpd"]
+[ext_resource type="Script" uid="uid://dxwiawsy87d6a" path="res://Scripts/Non-Diegetic/health.gd" id="3_uwah8"]
+
+[node name="MainUi" type="Control" unique_id=2120769900]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeGui" parent="." unique_id=2029072524 instance=ExtResource("1_qerpd")]
+layout_mode = 1
+
+[node name="Health" type="TextureProgressBar" parent="." unique_id=515113747]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 18.0
+offset_right = 137.0
+offset_bottom = 29.0
+scale = Vector2(2, 2)
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 2
+stretch_margin_right = 4
+stretch_margin_bottom = 2
+texture_under = ExtResource("1_n5jiu")
+texture_progress = ExtResource("2_qerpd")
+script = ExtResource("3_uwah8")

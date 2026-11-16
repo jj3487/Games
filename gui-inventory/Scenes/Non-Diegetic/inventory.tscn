@@ -21,16 +21,28 @@ axis_stretch_vertical = 1
 content_margin_left = 6.0
 content_margin_right = 6.0
 texture = ExtResource("3_sd8fj")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_th82r"]
 content_margin_left = 6.0
 content_margin_right = 6.0
 texture = ExtResource("4_trvqw")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_typyk"]
 content_margin_left = 6.0
 content_margin_right = 6.0
 texture = ExtResource("5_aqnmd")
+texture_margin_left = 2.0
+texture_margin_top = 4.0
+texture_margin_right = 2.0
+texture_margin_bottom = 1.0
 
 [node name="Inventory" type="Control" unique_id=929356804]
 layout_mode = 3

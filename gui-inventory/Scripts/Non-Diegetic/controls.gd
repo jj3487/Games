@@ -10,9 +10,6 @@ var amount: int
 const WHEAT: InventoryItem = preload("res://Inventory/Items/wheat.tres")
 const BREAD: InventoryItem = preload("res://Inventory/Items/bread.tres")
 
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	selected_item = WHEAT
