@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://c8pbtu1obxj7u" path="res://Assets/hand/basic_texture/l_hard_open.glb" id="1_8icbe"]
 [ext_resource type="PackedScene" uid="uid://vca73825bllx" path="res://Scenes/Diegetic/watch-3d.tscn" id="2_avutu"]
+[ext_resource type="Script" uid="uid://2b3nfg7e1mbc" path="res://Scripts/Diegetic/mesh_instance_3d.gd" id="3_fehrd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fehrd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btjcw"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_smhyf"]
 top_radius = 1.3134766
@@ -19,7 +24,7 @@ albedo_texture = SubResource("ViewportTexture_avutu")
 
 [sub_resource type="QuadMesh" id="QuadMesh_smhyf"]
 material = SubResource("StandardMaterial3D_xvnu6")
-size = Vector2(0.06, 0.1)
+size = Vector2(0.1, 0.14)
 
 [sub_resource type="Animation" id="Animation_8icbe"]
 length = 0.5
@@ -64,13 +69,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.12024164)
 [node name="l_hard_open" parent="." unique_id=1811256793 instance=ExtResource("1_8icbe")]
 transform = Transform3D(-0.25881895, 1.991961, 0.06698751, 1.9508742, 0.24352436, 0.367934, 0.35651582, 0.113521025, -1.9647233, -0.432, -0.702, -0.583)
 
+[node name="L_Hard_Open" parent="l_hard_open" index="0" unique_id=42178351]
+material_override = SubResource("StandardMaterial3D_fehrd")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="l_hard_open" unique_id=38251891]
 transform = Transform3D(0.024250219, 1.9645086e-10, 6.9849193e-10, -1.03682396e-10, 0.033337962, 1.2369128e-10, 9.313226e-10, 1.1641532e-10, 0.01814017, 0.0022522807, -0.10688099, 0.0016376674)
+material_override = SubResource("StandardMaterial3D_btjcw")
 mesh = SubResource("CylinderMesh_smhyf")
 
-[node name="WatchMesh" type="MeshInstance3D" parent="l_hard_open" unique_id=937624716]
+[node name="WatchMesh" type="MeshInstance3D" parent="l_hard_open" unique_id=937624716 node_paths=PackedStringArray("viewport")]
 transform = Transform3D(-0.024799462, 0.48336583, 0.12546867, 0.49615562, 0.017008713, 0.03254162, 0.027326845, 0.12674859, -0.4828954, 0.020411134, -0.049914077, -0.022969633)
 mesh = SubResource("QuadMesh_smhyf")
+script = ExtResource("3_fehrd")
+viewport = NodePath("../../SubViewport")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1246605354]
 libraries/ = SubResource("AnimationLibrary_fehrd")
@@ -81,3 +92,8 @@ size = Vector2i(100, 170)
 render_target_update_mode = 4
 
 [node name="Watch" parent="SubViewport" unique_id=1976980999 instance=ExtResource("2_avutu")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=295330194]
+transform = Transform3D(1, 0, 0, 0, 0.9478593, 0.31868905, 0, -0.31868905, 0.9478593, 0, 1.0774047, 0)
+
+[editable path="l_hard_open"]
