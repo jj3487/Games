@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://de1st27tigfms"]
 
 [ext_resource type="Texture2D" uid="uid://kke0rlwopb0a" path="res://Assets/Square Smartwatch/square smartwatch PNG.png" id="1_xy3yi"]
+[ext_resource type="FontFile" uid="uid://b2stwbiqd260i" path="res://Assets/Cantarell/Cantarell-Regular.ttf" id="2_36skd"]
+[ext_resource type="Script" uid="uid://cp7mgh216neh1" path="res://Scripts/Diegetic/health.gd" id="3_khimt"]
+[ext_resource type="Script" uid="uid://dku6w844mre2v" path="res://Scripts/Diegetic/time_gui.gd" id="4_105an"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71767"]
+bg_color = Color(0.27058825, 0.27058825, 0.27058825, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw0v7"]
+bg_color = Color(0.8980392, 0.22352941, 0.20784314, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Watch" type="Node2D" unique_id=1976980999]
 
@@ -8,3 +25,34 @@
 position = Vector2(65, 552)
 scale = Vector2(0.1005, 0.1005)
 texture = ExtResource("1_xy3yi")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1487819509]
+offset_left = 24.0
+offset_top = 506.0
+offset_right = 109.0
+offset_bottom = 599.0
+
+[node name="Health" type="ProgressBar" parent="." unique_id=1959075933]
+offset_left = 30.0
+offset_top = 543.0
+offset_right = 99.0
+offset_bottom = 562.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_36skd")
+theme_override_styles/background = SubResource("StyleBoxFlat_71767")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tw0v7")
+value = 100.0
+rounded = true
+script = ExtResource("3_khimt")
+
+[node name="Label" type="Label" parent="." unique_id=671304163]
+offset_left = 27.0
+offset_top = 517.0
+offset_right = 102.0
+offset_bottom = 542.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_36skd")
+theme_override_font_sizes/font_size = 17
+text = "00:00:00"
+script = ExtResource("4_105an")
