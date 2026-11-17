@@ -1,6 +1,6 @@
 extends Node
 
-@onready var controls: Node2D = $"../Controls"
+@onready var controls: Control = $"../Controls"
 @onready var mainMenu: Control = $"../CenterContainer/MainMenu"
 @onready var watch = $"../Watch"
 @onready var mainMenu_layer: CanvasLayer = $"../MainMenu/CanvasLayer"

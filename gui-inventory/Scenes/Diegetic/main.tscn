@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bujj7sorl6rqi"]
 
 [ext_resource type="PackedScene" uid="uid://de1st27tigfms" path="res://Scenes/Diegetic/watch.tscn" id="1_4shom"]
+[ext_resource type="PackedScene" uid="uid://ck6bvxqkjvvko" path="res://Scenes/Diegetic/hand.tscn" id="2_gejfe"]
 [ext_resource type="PackedScene" uid="uid://boouhq73r41g4" path="res://Scenes/Diegetic/main_menu.tscn" id="4_e2irk"]
 [ext_resource type="PackedScene" uid="uid://bipdi5eyb5f03" path="res://Scenes/Diegetic/controls.tscn" id="4_jse4n"]
 [ext_resource type="Script" uid="uid://e68sns2cnw5c" path="res://Scripts/Diegetic/game_controller.gd" id="5_jse4n"]
@@ -11,9 +12,13 @@
 script = ExtResource("9_e2irk")
 metadata/_custom_type_script = "uid://dtv2h2v7sxbne"
 
-[node name="main_diegetic" type="Node2D" unique_id=138410695]
+[node name="main_diegetic" type="Node3D" unique_id=682076947]
 
 [node name="Watch" parent="." unique_id=1976980999 instance=ExtResource("1_4shom")]
+visible = false
+
+[node name="Hand" parent="." unique_id=670858041 instance=ExtResource("2_gejfe")]
+current = true
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=279545902]
 offset_right = 1152.0

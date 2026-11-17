@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 signal damaged_d(hp: int)
 signal heal_d(hp: int)
