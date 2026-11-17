@@ -19,7 +19,7 @@ func _ready() -> void:
 func _show_only(target: Node) -> void:
 	mainMenu.visible = (target == mainMenu)
 	controls.visible = (target == controls)
-	# hand is a Camera3D: it stays active, so nothing to hide
+	get_tree().paused = (target == mainMenu)
 
 func _toggle(target: Control) -> void:
 	if target.visible:

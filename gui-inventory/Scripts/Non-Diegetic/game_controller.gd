@@ -8,6 +8,10 @@ extends Node
 @onready var mainMenu_layer: CanvasLayer = $"../MainMenu/CanvasLayer"
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	mainMenu.process_mode = Node.PROCESS_MODE_ALWAYS
+	controls.process_mode = Node.PROCESS_MODE_ALWAYS
+	inventory.process_mode = Node.PROCESS_MODE_ALWAYS
 	_show_only(mainMenu)
 
 func toggle_menu() -> void:
@@ -39,6 +43,7 @@ func _show_only(target: CanvasItem) -> void:
 		n.visible = (n == target)
 	controls_layer.visible = (target == controls)
 	mainMenu_layer.visible = (target == mainMenu)
+	get_tree().paused = (target == mainMenu)
 
 func _toggle(target: CanvasItem) -> void:
 	if target.visible:

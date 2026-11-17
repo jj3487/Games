@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bujj7sorl6rqi"]
 
-[ext_resource type="PackedScene" uid="uid://de1st27tigfms" path="res://Scenes/Diegetic/watch.tscn" id="1_4shom"]
 [ext_resource type="PackedScene" uid="uid://ck6bvxqkjvvko" path="res://Scenes/Diegetic/hand.tscn" id="2_gejfe"]
 [ext_resource type="PackedScene" uid="uid://boouhq73r41g4" path="res://Scenes/Diegetic/main_menu.tscn" id="4_e2irk"]
 [ext_resource type="PackedScene" uid="uid://bipdi5eyb5f03" path="res://Scenes/Diegetic/controls.tscn" id="4_jse4n"]
@@ -13,9 +12,6 @@ script = ExtResource("9_e2irk")
 metadata/_custom_type_script = "uid://dtv2h2v7sxbne"
 
 [node name="main_diegetic" type="Node3D" unique_id=682076947]
-
-[node name="Watch" parent="." unique_id=1976980999 instance=ExtResource("1_4shom")]
-visible = false
 
 [node name="Hand" parent="." unique_id=670858041 instance=ExtResource("2_gejfe")]
 current = true
@@ -30,6 +26,7 @@ layout_mode = 2
 [node name="Controls" parent="." unique_id=960380363 instance=ExtResource("4_jse4n")]
 
 [node name="GameController" type="Node" parent="." unique_id=1827171409]
+process_mode = 3
 script = ExtResource("5_jse4n")
 
 [node name="TimeSystem" type="Node" parent="." unique_id=267645503]
