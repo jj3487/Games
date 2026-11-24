@@ -1,8 +1,10 @@
-extends Node
+extends Control
 
 @onready var inventory: Inventory = preload("res://Inventory/player_inventory.tres")
 @onready var slots: Array = $NinePatchRect/TabContainer/Items/GridContainer.get_children()
 @onready var ItemStackGuiClass= preload("res://Scenes/Non-Diegetic/item_stack_gui.tscn")
+
+var itemInHand: ItemStackGui
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,4 +39,27 @@ func _process(delta: float) -> void:
 	pass
 
 func onSlotClicked(slot) -> void:
-	pass
+	if slot.isEmpty() && itemInHand:
+		insertItemInSlot(slot)
+		return
+	if !itemInHand:
+		takeItemFromSlot(slot)
+	
+
+func takeItemFromSlot(slot):
+	itemInHand = slot.takeItem()
+	add_child(itemInHand)
+	updateItemInHand()
+
+func insertItemInSlot(slot):
+	var item = itemInHand
+	remove_child(itemInHand)
+	itemInHand = null
+	slot.insert(item)
+
+func updateItemInHand() -> void:
+	if !itemInHand: return
+	itemInHand.global_position = get_global_mouse_position() - itemInHand.size/2
+
+func _input(event) -> void:
+	updateItemInHand()

@@ -9,13 +9,12 @@ func insert(isg: ItemStackGui) -> void:
 	backgroundSprite.play("filled")
 	container.add_child(itemStackGui)
 
-#func update(item: InventoryItem, amount: int) -> void:
-	#if !item:
-		#itemSprite.visible = false
-		#backgroundSprite.play("default")
-		#itemLabel.text = ""
-	#else:
-		#itemSprite.visible = true
-		#itemSprite.texture = item.texture
-		#itemLabel.text = str(amount)
-		#backgroundSprite.play("filled")
+func takeItem() -> ItemStackGui:
+	var item = itemStackGui
+	container.remove_child(itemStackGui)
+	itemStackGui = null
+	backgroundSprite.play("default")
+	return item
+
+func isEmpty():
+	return !itemStackGui
