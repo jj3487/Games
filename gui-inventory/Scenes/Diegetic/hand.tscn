@@ -73,7 +73,7 @@ transform = Transform3D(-0.25881895, 1.991961, 0.06698751, 1.9508742, 0.24352436
 material_override = SubResource("StandardMaterial3D_fehrd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="l_hard_open" unique_id=38251891]
-transform = Transform3D(0.024250219, 1.9645086e-10, 6.9849193e-10, -1.03682396e-10, 0.033337962, 1.2369128e-10, 9.313226e-10, 1.1641532e-10, 0.01814017, 0.0022522807, -0.10688099, 0.0016376674)
+transform = Transform3D(0.023448624, 2.910383e-11, 6.9849193e-10, 2.764864e-10, 0.041777022, 2.3283064e-10, 1.3969839e-09, 6.9849193e-10, 0.018295363, 0.0045452714, -0.12435247, 0.001044184)
 material_override = SubResource("StandardMaterial3D_btjcw")
 mesh = SubResource("CylinderMesh_smhyf")
 

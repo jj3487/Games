@@ -32,7 +32,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Slot" type="Panel" unique_id=322147170]
+[node name="Slot" type="Button" unique_id=439081437]
 custom_minimum_size = Vector2(26, 26)
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,16 +52,3 @@ custom_minimum_size = Vector2(26, 26)
 layout_mode = 0
 offset_right = 26.0
 offset_bottom = 26.0
-
-[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1407982967]
-layout_mode = 2
-
-[node name="Item" type="Sprite2D" parent="CenterContainer/Panel" unique_id=135833176]
-
-[node name="Label" type="Label" parent="CenterContainer/Panel" unique_id=1032408052]
-layout_mode = 0
-offset_left = -1.0
-offset_right = 13.0
-offset_bottom = 13.0
-theme_override_font_sizes/font_size = 8
-text = "99"

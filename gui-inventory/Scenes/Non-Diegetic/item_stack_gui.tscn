@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bfya36ec0t4yv"]
+
+[ext_resource type="Script" uid="uid://c5nwssiri0t0t" path="res://Scripts/Non-Diegetic/item_stack_gui.gd" id="1_x7e5r"]
+
+[node name="Panel" type="Panel" unique_id=468904284]
+script = ExtResource("1_x7e5r")
+
+[node name="Item" type="Sprite2D" parent="." unique_id=864766095]
+
+[node name="Label" type="Label" parent="." unique_id=88885836]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 13.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 8
+text = "99"

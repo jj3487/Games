@@ -10,6 +10,8 @@ extends Node
 var hand_out := false  # false = hand is out of view
 
 func _ready() -> void:
+	controls.process_mode = Node.PROCESS_MODE_ALWAYS
+	mainMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	_show_only(hand)  # hand is the default
 	# start with the hand out of view (first frame of the animation)
 	anim.play("appear")
@@ -39,5 +41,5 @@ func _input(event: InputEvent) -> void:
 		_toggle(mainMenu)
 	if event.is_action_pressed("open_controls"):
 		_toggle(controls)
-	if event.is_action_pressed("toggle_hand"):
+	if event.is_action_pressed("toggle_hand")  and not mainMenu.visible:
 		_toggle_hand_anim()
