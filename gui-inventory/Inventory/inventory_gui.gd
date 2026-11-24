@@ -13,7 +13,9 @@ func _ready() -> void:
 	update()
 
 func connectSlots() -> void:
-	for slot in slots:
+	for i in range(slots.size()):
+		var slot = slots[i]
+		slot.index = i
 		var callable = Callable(onSlotClicked)
 		callable = callable.bind(slot)
 		slot.pressed.connect(callable)
@@ -44,7 +46,16 @@ func onSlotClicked(slot) -> void:
 		return
 	if !itemInHand:
 		takeItemFromSlot(slot)
-	
+	if slot.itemStackGui and slot.itemStackGui.item == itemInHand.item:
+		stackItemInSlot(slot)
+
+func stackItemInSlot(slot) -> void:
+	var total = slot.itemStackGui.amount + itemInHand.amount
+	if total > inventory.MAX_STACK:
+		return
+	inventory.insertItem(slot.index, itemInHand.originIndex, itemInHand.item, itemInHand.amount)
+	itemInHand.queue_free()
+	itemInHand = null
 
 func takeItemFromSlot(slot):
 	itemInHand = slot.takeItem()

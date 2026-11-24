@@ -46,3 +46,35 @@ func delete_item(item: InventoryItem, amount: int) -> void:
 			if amounts[i] == 0:
 				items[i] = null
 	updated.emit()
+
+func removeItemAtIndex(index: int) -> void:
+	if index < 0 or index >= items.size():
+		return
+	items[index] = null
+	amounts[index] = 0
+
+func insertItem(index: int, oldIndex: int, item: InventoryItem, amount: int) -> void:
+	print("insert at ", index, " from ", oldIndex)
+	if index < 0 or index >= items.size():
+		return
+	if oldIndex == index:
+		return
+	if items[index] == item:
+		stackItem(index, oldIndex, amount)
+		return
+	if oldIndex >= 0 and oldIndex < items.size():
+		removeItemAtIndex(oldIndex)
+	items[index] = item
+	amounts[index] = amount
+	updated.emit()
+
+func stackItem(index: int, oldIndex: int, amount: int) -> void:
+	var moved := mini(MAX_STACK - amounts[index], amount)
+	amounts[index] += moved
+	amount -= moved
+	if oldIndex >= 0 and oldIndex < items.size():
+		if amount > 0:
+			amounts[oldIndex] = amount  # leftover stays in the old slot
+		else:
+			removeItemAtIndex(oldIndex)
+	updated.emit()

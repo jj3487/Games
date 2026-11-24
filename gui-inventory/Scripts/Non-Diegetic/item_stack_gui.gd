@@ -5,6 +5,7 @@ class_name ItemStackGui
 @onready var itemSprite: Sprite2D = $Item
 @onready var itemLabel: Label = $Label
 
+var originIndex: int = -1
 var item: InventoryItem
 var amount: int
 
