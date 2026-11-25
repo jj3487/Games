@@ -28,7 +28,7 @@ controls_d=""
 
 [gui]
 
-theme/custom="res://Assets/pixel_ui_fantasy/themes/parchment.tres"
+theme/custom="uid://ddek5lj31yntq"
 theme/custom_font="uid://dmmkrfcj7f62k"
 
 [input]

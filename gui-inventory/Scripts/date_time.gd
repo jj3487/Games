@@ -26,5 +26,5 @@ func inc_by_sec(delta_sec: float) -> void:
 	minutes = minutes % 60
 	hours = hours % 24
 	
-	print(str(hours) + ":" + str(minutes) + ":" + str(seconds))
+	#print(str(hours) + ":" + str(minutes) + ":" + str(seconds))
 	time_changed.emit(self)
