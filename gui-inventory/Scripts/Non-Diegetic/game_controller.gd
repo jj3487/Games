@@ -6,6 +6,7 @@ extends Node
 @onready var main_ui: Control = $"../MainUi"
 @onready var controls_layer: CanvasLayer = $"../Controls/CanvasLayer"
 @onready var mainMenu_layer: CanvasLayer = $"../MainMenu/CanvasLayer"
+@onready var main_ui_layer: CanvasLayer = $"../MainUi/CanvasLayer"
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -43,6 +44,7 @@ func _show_only(target: CanvasItem) -> void:
 		n.visible = (n == target)
 	controls_layer.visible = (target == controls)
 	mainMenu_layer.visible = (target == mainMenu)
+	main_ui_layer.visible = (target == main_ui or target == inventory)
 	get_tree().paused = (target == mainMenu)
 
 func _toggle(target: CanvasItem) -> void:

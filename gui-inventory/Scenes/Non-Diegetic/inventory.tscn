@@ -87,10 +87,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_luhj6")
 theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_c828r")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_th82r")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_typyk")
-current_tab = 1
+current_tab = 0
 
 [node name="Items" type="TabBar" parent="NinePatchRect/TabContainer" unique_id=2034860117]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -137,6 +136,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Crafting" type="TabBar" parent="NinePatchRect/TabContainer" unique_id=1283260429]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
