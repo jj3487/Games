@@ -3,7 +3,7 @@ extends Control
 @onready var inventory: Inventory = preload("res://Inventory/player_inventory.tres")
 @onready var slots: Array = $NinePatchRect/TabContainer/Items/GridContainer.get_children()
 @onready var ItemStackGuiClass= preload("res://Scenes/Non-Diegetic/item_stack_gui.tscn")
-
+@onready var tooltip = $CraftItemLabel
 var itemInHand: ItemStackGui
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +12,8 @@ func _ready() -> void:
 	connectCraftSlots()
 	inventory.updated.connect(update)
 	update()
+	tooltip.createTooltip()
+	tooltip.connectCraftHover()
 
 func connectSlots() -> void:
 	for i in range(slots.size()):
@@ -82,6 +84,8 @@ func updateItemInHand() -> void:
 
 func _input(event) -> void:
 	updateItemInHand()
+	if tooltip.tooltip and tooltip.tooltip.visible:
+		tooltip.tooltip.global_position = get_global_mouse_position() + Vector2(12, 12)
 	
 ##Crafting part
 
@@ -161,3 +165,6 @@ func craftRecipe(index: int) -> void:
 	for i in range(recipe.ingredients.size()):
 		inventory.delete_item(recipe.ingredients[i], recipe.ingredient_amounts[i])
 	inventory.add_item(recipe.result, recipe.result_amount)
+
+func connectCraftHover() -> void:
+	tooltip.connectCraftHover()
