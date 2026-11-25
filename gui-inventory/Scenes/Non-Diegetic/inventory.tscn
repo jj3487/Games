@@ -160,6 +160,8 @@ dragging_enabled = false
 [node name="ScrollContainer2" type="ScrollContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer" unique_id=1587262928]
 layout_mode = 2
 theme = ExtResource("9_m1foa")
+theme_override_constants/scrollbar_h_separation = 3
+theme_override_constants/scrollbar_v_separation = 0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 scroll_horizontal_by_default = true
@@ -206,6 +208,7 @@ layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer" unique_id=1135556035]
 layout_mode = 2
+theme_override_constants/scrollbar_h_separation = 3
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
