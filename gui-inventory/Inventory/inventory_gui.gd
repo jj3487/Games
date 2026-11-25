@@ -9,7 +9,6 @@ var itemInHand: ItemStackGui
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	connectSlots()
-	#connectItemSlots()
 	connectCraftSlots()
 	inventory.updated.connect(update)
 	update()
@@ -94,14 +93,6 @@ func connectCraftSlots() -> void:
 	for i in range(craftSlots.size()):
 		var slot = craftSlots[i]
 		slot.pressed.connect(craftRecipe.bind(i))
-
-func connectItemSlots() -> void:
-	for i in range(itemSlots.size()):
-		var slot = itemSlots[i]
-		slot.index = i
-		var callable = Callable(onSlotClicked)
-		callable = callable.bind(slot)
-		slot.pressed.connect(callable)
 
 func updateCraftSlots() -> void:
 	for i in range(craftSlots.size()):

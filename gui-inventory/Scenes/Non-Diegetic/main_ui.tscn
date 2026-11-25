@@ -3,18 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://c822e75n6yj4r" path="res://Assets/pixel_ui_fantasy/themes/parchment/progress_bg.png" id="1_n5jiu"]
 [ext_resource type="PackedScene" uid="uid://c7dukcio445qs" path="res://Scenes/Non-Diegetic/time_gui.tscn" id="1_qerpd"]
 [ext_resource type="Texture2D" uid="uid://cg3cmfiexf53j" path="res://Assets/pixel_ui_fantasy/bars/bar_red.png" id="2_qerpd"]
-[ext_resource type="Script" uid="uid://bsym6agjxfeav" path="res://Scripts/Non-Diegetic/time_gui.gd" id="2_uwah8"]
 [ext_resource type="Script" uid="uid://dxwiawsy87d6a" path="res://Scripts/Non-Diegetic/health.gd" id="3_uwah8"]
+[ext_resource type="PackedScene" uid="uid://cc4jyhlx6ih7a" path="res://Scenes/Non-Diegetic/slot.tscn" id="5_uwah8"]
 
 [node name="MainUi" type="Control" unique_id=2120769900]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1152.0
+offset_bottom = 647.0
 
 [node name="TimeGui" parent="." unique_id=2029072524 instance=ExtResource("1_qerpd")]
 layout_mode = 1
-script = ExtResource("2_uwah8")
 
 [node name="Health" type="TextureProgressBar" parent="." unique_id=515113747]
 layout_mode = 0
@@ -31,3 +30,37 @@ stretch_margin_bottom = 2
 texture_under = ExtResource("1_n5jiu")
 texture_progress = ExtResource("2_qerpd")
 script = ExtResource("3_uwah8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1088972861]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="Dock" type="GridContainer" parent="CanvasLayer" unique_id=193088281]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -347.0
+offset_top = -360.5
+offset_right = -201.0
+offset_bottom = -334.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+columns = 5
+
+[node name="Slot" parent="CanvasLayer/Dock" unique_id=439081437 instance=ExtResource("5_uwah8")]
+layout_mode = 2
+
+[node name="Slot2" parent="CanvasLayer/Dock" unique_id=303420936 instance=ExtResource("5_uwah8")]
+layout_mode = 2
+
+[node name="Slot3" parent="CanvasLayer/Dock" unique_id=1159806123 instance=ExtResource("5_uwah8")]
+layout_mode = 2
+
+[node name="Slot4" parent="CanvasLayer/Dock" unique_id=1719612883 instance=ExtResource("5_uwah8")]
+layout_mode = 2
+
+[node name="Slot5" parent="CanvasLayer/Dock" unique_id=1709079081 instance=ExtResource("5_uwah8")]
+layout_mode = 2
