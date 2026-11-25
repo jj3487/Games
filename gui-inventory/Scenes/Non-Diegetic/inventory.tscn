@@ -157,7 +157,7 @@ theme_override_constants/separation = 13
 theme_override_styles/split_bar_background = SubResource("StyleBoxTexture_2bs4c")
 dragging_enabled = false
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer" unique_id=1587262928]
+[node name="Items" type="ScrollContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer" unique_id=1587262928]
 layout_mode = 2
 theme = ExtResource("9_m1foa")
 theme_override_constants/scrollbar_h_separation = 3
@@ -166,78 +166,78 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 scroll_horizontal_by_default = true
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2" unique_id=1108496117]
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items" unique_id=1108496117]
 layout_mode = 2
 columns = 3
 
-[node name="Slot" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=439081437 instance=ExtResource("6_o4ksx")]
+[node name="Slot" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=439081437 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot2" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=1203602051 instance=ExtResource("6_o4ksx")]
+[node name="Slot2" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=1203602051 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot3" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=1173847043 instance=ExtResource("6_o4ksx")]
+[node name="Slot3" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=1173847043 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot4" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=634730335 instance=ExtResource("6_o4ksx")]
+[node name="Slot4" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=634730335 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot5" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=1390118074 instance=ExtResource("6_o4ksx")]
+[node name="Slot5" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=1390118074 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot6" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=975376156 instance=ExtResource("6_o4ksx")]
+[node name="Slot6" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=975376156 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot7" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=341763553 instance=ExtResource("6_o4ksx")]
+[node name="Slot7" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=341763553 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot8" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=78361309 instance=ExtResource("6_o4ksx")]
+[node name="Slot8" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=78361309 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot9" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=1718202300 instance=ExtResource("6_o4ksx")]
+[node name="Slot9" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=1718202300 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot10" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=1268408166 instance=ExtResource("6_o4ksx")]
+[node name="Slot10" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=1268408166 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot11" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=1975639626 instance=ExtResource("6_o4ksx")]
+[node name="Slot11" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=1975639626 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot12" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer2/GridContainer" unique_id=1023923152 instance=ExtResource("6_o4ksx")]
+[node name="Slot12" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Items/GridContainer" unique_id=1023923152 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer" unique_id=1135556035]
+[node name="Crafted" type="ScrollContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer" unique_id=1135556035]
 layout_mode = 2
 theme_override_constants/scrollbar_h_separation = 3
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="GridContainer2" type="GridContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer" unique_id=2047581868]
+[node name="GridContainer2" type="GridContainer" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Crafted" unique_id=2047581868]
 layout_mode = 2
 columns = 2
 
-[node name="Slot" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer/GridContainer2" unique_id=2068530947 instance=ExtResource("6_o4ksx")]
+[node name="Slot" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Crafted/GridContainer2" unique_id=2068530947 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot2" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer/GridContainer2" unique_id=2142758402 instance=ExtResource("6_o4ksx")]
+[node name="Slot2" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Crafted/GridContainer2" unique_id=2142758402 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot3" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer/GridContainer2" unique_id=1433381978 instance=ExtResource("6_o4ksx")]
+[node name="Slot3" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Crafted/GridContainer2" unique_id=1433381978 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot4" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer/GridContainer2" unique_id=809981283 instance=ExtResource("6_o4ksx")]
+[node name="Slot4" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Crafted/GridContainer2" unique_id=809981283 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot5" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer/GridContainer2" unique_id=1574500349 instance=ExtResource("6_o4ksx")]
+[node name="Slot5" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Crafted/GridContainer2" unique_id=1574500349 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot6" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer/GridContainer2" unique_id=1276570432 instance=ExtResource("6_o4ksx")]
+[node name="Slot6" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Crafted/GridContainer2" unique_id=1276570432 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot7" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer/GridContainer2" unique_id=1872217117 instance=ExtResource("6_o4ksx")]
+[node name="Slot7" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Crafted/GridContainer2" unique_id=1872217117 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
-[node name="Slot8" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/ScrollContainer/GridContainer2" unique_id=969272343 instance=ExtResource("6_o4ksx")]
+[node name="Slot8" parent="NinePatchRect/TabContainer/Crafting/VBoxContainer/Crafted/GridContainer2" unique_id=969272343 instance=ExtResource("6_o4ksx")]
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=1843416344]

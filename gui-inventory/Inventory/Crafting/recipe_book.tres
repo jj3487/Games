@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RecipeBook" format=3 uid="uid://cqunrsse5ti30"]
+
+[ext_resource type="Script" uid="uid://b1h40do4n1cd8" path="res://Inventory/Crafting/recipe.gd" id="1_bc5r5"]
+[ext_resource type="Resource" uid="uid://bmsqti5gay82e" path="res://Inventory/Crafting/bread_recipe.tres" id="2_4c4hp"]
+[ext_resource type="Script" uid="uid://bxhcvvw2xq2ue" path="res://Inventory/Crafting/recipe_book.gd" id="3_8pugu"]
+
+[resource]
+script = ExtResource("3_8pugu")
+recipes = Array[ExtResource("1_bc5r5")]([ExtResource("2_4c4hp")])
+metadata/_custom_type_script = "uid://bxhcvvw2xq2ue"

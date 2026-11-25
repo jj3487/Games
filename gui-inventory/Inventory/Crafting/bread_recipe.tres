@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://bmsqti5gay82e"]
+
+[ext_resource type="Script" uid="uid://c3r4athgbmhg6" path="res://Inventory/inventory_item.gd" id="1_oogsw"]
+[ext_resource type="Resource" uid="uid://ck3vunevilyv4" path="res://Inventory/Items/wheat.tres" id="2_drcc3"]
+[ext_resource type="Script" uid="uid://b1h40do4n1cd8" path="res://Inventory/Crafting/recipe.gd" id="2_rdpd1"]
+[ext_resource type="Resource" uid="uid://h7m6v4srn72o" path="res://Inventory/Items/bread.tres" id="3_7nr2i"]
+
+[resource]
+script = ExtResource("2_rdpd1")
+result = ExtResource("3_7nr2i")
+ingredients = Array[ExtResource("1_oogsw")]([ExtResource("2_drcc3")])
+ingredient_amounts = Array[int]([3])
+metadata/_custom_type_script = "uid://b1h40do4n1cd8"
