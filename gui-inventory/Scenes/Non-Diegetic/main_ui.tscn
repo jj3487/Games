@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c7dukcio445qs" path="res://Scenes/Non-Diegetic/time_gui.tscn" id="1_qerpd"]
 [ext_resource type="Texture2D" uid="uid://cg3cmfiexf53j" path="res://Assets/pixel_ui_fantasy/bars/bar_red.png" id="2_qerpd"]
 [ext_resource type="Script" uid="uid://dxwiawsy87d6a" path="res://Scripts/Non-Diegetic/health.gd" id="3_uwah8"]
-[ext_resource type="Script" uid="uid://n01x6lpykeld" path="res://Scripts/Non-Diegetic/item_dock.gd" id="5_1xgxo"]
 [ext_resource type="PackedScene" uid="uid://cc4jyhlx6ih7a" path="res://Scenes/Non-Diegetic/slot.tscn" id="5_uwah8"]
 
 [node name="MainUi" type="Control" unique_id=2120769900]
@@ -36,7 +35,7 @@ script = ExtResource("3_uwah8")
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
-[node name="Dock" type="GridContainer" parent="CanvasLayer" unique_id=193088281]
+[node name="Dock" type="GridContainer" parent="CanvasLayer" unique_id=193088281 groups=["dock"]]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -50,7 +49,6 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 columns = 5
-script = ExtResource("5_1xgxo")
 
 [node name="Slot" parent="CanvasLayer/Dock" unique_id=439081437 instance=ExtResource("5_uwah8")]
 layout_mode = 2

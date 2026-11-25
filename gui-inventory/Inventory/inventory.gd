@@ -11,7 +11,7 @@ func add_item(item: InventoryItem, amount: int) -> void:
 	if item == null or amount <= 0:
 		return
 	amount = check_stack(item, amount)
-	for i in items.size():
+	for i in MAX_SLOTS:
 		if amount == 0:
 			break
 		if items[i] == null:
@@ -36,7 +36,7 @@ func delete_item(item: InventoryItem, amount: int) -> void:
 	if item == null or amount <= 0:
 		return
 	var left := amount
-	for i in range(MAX_SLOTS - 1, -1, -1):
+	for i in range(items.size() - 1, -1, -1):
 		if left == 0:
 			break
 		if items[i] == item:

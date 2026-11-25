@@ -4,12 +4,15 @@ extends Control
 @onready var slots: Array = $NinePatchRect/TabContainer/Items/GridContainer.get_children()
 @onready var ItemStackGuiClass= preload("res://Scenes/Non-Diegetic/item_stack_gui.tscn")
 @onready var tooltip = $CraftItemLabel
+@onready var dock: GridContainer = get_tree().get_first_node_in_group("dock")
+@onready var dockSlots: Array = dock.get_children()
 var itemInHand: ItemStackGui
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	connectSlots()
 	connectCraftSlots()
+	connectDockSlots()
 	inventory.updated.connect(update)
 	update()
 	tooltip.createTooltip()
@@ -26,12 +29,13 @@ func connectSlots() -> void:
 func update() -> void:
 	refreshSlots(slots)
 	refreshSlots(itemSlots)
+	refreshSlots(dockSlots, inventory.MAX_SLOTS)
 	updateCraftSlots()
 
-func refreshSlots(slotArray: Array) -> void:
+func refreshSlots(slotArray: Array, offset: int = 0) -> void:
 	for i in range(slotArray.size()):
 		var slot = slotArray[i]
-		var item = inventory.items[i] if i < inventory.items.size() else null
+		var item = inventory.items[i+offset] if i < inventory.items.size() else null
 
 		if !item:
 			if slot.itemStackGui:
@@ -43,7 +47,7 @@ func refreshSlots(slotArray: Array) -> void:
 			gui = ItemStackGuiClass.instantiate()
 			slot.insert(gui)
 		gui.item = item
-		gui.amount = inventory.amounts[i]
+		gui.amount = inventory.amounts[i+offset]
 		gui.update()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -168,3 +172,9 @@ func craftRecipe(index: int) -> void:
 
 func connectCraftHover() -> void:
 	tooltip.connectCraftHover()
+
+func connectDockSlots() -> void:
+	for i in range(dockSlots.size()):
+		var slot = dockSlots[i]
+		slot.index = inventory.MAX_SLOTS + i
+		slot.pressed.connect(onSlotClicked.bind(slot))
