@@ -9,7 +9,7 @@ var itemInHand: ItemStackGui
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	connectSlots()
-	connectItemSlots()
+	#connectItemSlots()
 	connectCraftSlots()
 	inventory.updated.connect(update)
 	update()
@@ -133,43 +133,40 @@ func canCraft(recipe: Recipe) -> bool:
 			return false
 	return true
 
-func removeItems(item, amount: int) -> void:
-	for i in range(inventory.items.size()):
-		if inventory.items[i] != item:
-			continue
-		var take = min(amount, inventory.amounts[i])
-		inventory.amounts[i] -= take
-		amount -= take
-		if inventory.amounts[i] <= 0:
-			inventory.items[i] = null
-			inventory.amounts[i] = 0
-		if amount <= 0:
-			return
+func hasSpaceFor(recipe: Recipe) -> bool:
+	var items = inventory.items.duplicate()
+	var amounts = inventory.amounts.duplicate()
 
-func addItems(item, amount: int) -> void:
-	# fill existing stacks first
-	for i in range(inventory.items.size()):
-		if amount <= 0: return
-		if inventory.items[i] == item:
-			var add = min(amount, inventory.MAX_STACK - inventory.amounts[i])
-			inventory.amounts[i] += add
-			amount -= add
-	# then use empty slots
-	for i in range(inventory.items.size()):
-		if amount <= 0: return
-		if !inventory.items[i]:
-			var add = min(amount, inventory.MAX_STACK)
-			inventory.items[i] = item
-			inventory.amounts[i] = add
-			amount -= add
+	# pretend to remove the ingredients
+	for r in range(recipe.ingredients.size()):
+		var need = recipe.ingredient_amounts[r]
+		for i in range(items.size()):
+			if items[i] != recipe.ingredients[r]:
+				continue
+			var take = min(need, amounts[i])
+			amounts[i] -= take
+			need -= take
+			if amounts[i] <= 0:
+				items[i] = null
+				amounts[i] = 0
+			if need <= 0:
+				break
+
+	# count how much of the result still fits
+	var room = 0
+	for i in range(items.size()):
+		if !items[i]:
+			room += inventory.MAX_STACK
+		elif items[i] == recipe.result:
+			room += inventory.MAX_STACK - amounts[i]
+	return room >= recipe.result_amount
 
 func craftRecipe(index: int) -> void:
 	if index >= recipeBook.recipes.size():
 		return
 	var recipe: Recipe = recipeBook.recipes[index]
-	if !canCraft(recipe):
+	if !canCraft(recipe) or !hasSpaceFor(recipe):
 		return
 	for i in range(recipe.ingredients.size()):
-		removeItems(recipe.ingredients[i], recipe.ingredient_amounts[i])
-	addItems(recipe.result, recipe.result_amount)
-	inventory.updated.emit()
+		inventory.delete_item(recipe.ingredients[i], recipe.ingredient_amounts[i])
+	inventory.add_item(recipe.result, recipe.result_amount)
